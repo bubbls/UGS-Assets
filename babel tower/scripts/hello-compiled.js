@@ -9037,7 +9037,7 @@ BabelWorld.prototype.getMasterProdCoef = function(a) {
     return 1 + .9 * a
 };
 BabelWorld.prototype.getMasterTimeCoef = function() {
-    var a = 1;
+    var a = 0;
     this.isSpeedingTime && (a = 10);
     this.clockTimeSpeeder && (a *= this.clockTimeSpeeder.getTimeSpeedBoost());
     return a
@@ -11163,7 +11163,7 @@ BabelBallanser.prototype.getRestartTimeUpgradePrice = function(a) {
     return b
 };
 BabelBallanser.prototype.getRestartMoneyUpgradePrice = function(a) {
-    return Math.round(40 * Math.pow(1.5, a))
+    return Math.round(40 * Math.pow(1.1, a))
 };
 BabelBallanser.prototype.getRestartGBUpgradePrice = function(a) {
     for (var b = 30, c = 1, d = 0; d <= a; d++) b *= c, c += 1;
@@ -11174,16 +11174,16 @@ BabelBallanser.prototype.getScienceBoostUpgradePrice = function(a) {
     return b
 };
 BabelBallanser.prototype.getSimpleUpgradePrice = function(a) {
-    return 10 * Math.pow(10, a)
+    return 10 * Math.pow(2, a)
 };
 BabelBallanser.prototype.upgrStoneTapProduction_isNode = function(a) {
     return 0 == a % 10
 };
 BabelBallanser.prototype.upgrStoneTapProduction_simpleAdd = function(a, b, c) {
-    return a + .1 * Math.pow(2, b)
+    return a + .1 * Math.pow(1.1, b)
 };
 BabelBallanser.prototype.upgrStoneTapProduction_nodeAdd = function(a, b) {
-    return a + .5 * Math.pow(2, b)
+    return a + .5 * Math.pow(1.1, b)
 };
 BabelBallanser.prototype.upgrNumMiners_isNode = function(a) {
     return 0 == a % 4
@@ -11225,7 +11225,7 @@ BabelBallanser.prototype.upgrElephant_isNode = function(a) {
     return 0 == a % 10
 };
 BabelBallanser.prototype.upgrElephant_simpleAdd = function(a, b, c) {
-    return a + 1E3 * Math.pow(2, b)
+    return a + 1E3 * Math.pow(1.1, b)
 };
 BabelBallanser.prototype.upgrElephant_nodeAdd = function(a, b) {
     return 2 * a
