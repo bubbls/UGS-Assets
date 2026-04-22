@@ -6547,7 +6547,7 @@ World.prototype.getMasterTimeCoef = function() {
 World.prototype.createNthRewardObject = function(a) {
     return {
         rewardType: "freeMoney",
-        rewardValue: 50
+        rewardValue: 500000
     }
 };
 World.prototype.giveReward = function(a, b) {
@@ -9030,11 +9030,11 @@ BabelWorld.prototype.getMasterPriceCoef = function(a) {
 };
 BabelWorld.prototype.getMasterTapCoef = function(a) {
     a || (a = this.prestige);
-    return 1 + .25 * a
+    return 1 + .7 * a
 };
 BabelWorld.prototype.getMasterProdCoef = function(a) {
     a || (a = this.prestige);
-    return 1 + .2 * a
+    return 1 + .9 * a
 };
 BabelWorld.prototype.getMasterTimeCoef = function() {
     var a = 1;
@@ -9048,12 +9048,12 @@ BabelWorld.prototype.getMasterScienceCoef = function() {
     return a
 };
 BabelWorld.prototype.getAfterRestartTimeCoef = function() {
-    var a = .2;
+    var a = 1;
     this.additionalParamsStorage && (a = this.additionalParamsStorage.getUpgradeParameterValueOfCode("perc_time"));
     return a
 };
 BabelWorld.prototype.getAfterRestartMoneyCoef = function() {
-    var a = 0;
+    var a = .001;
     this.additionalParamsStorage && (a = this.additionalParamsStorage.getUpgradeParameterValueOfCode("perc_money"));
     return a
 };
@@ -9072,7 +9072,7 @@ BabelWorld.prototype.completeRewardObProperties = function(a, b) {
     b || (b = 0);
     switch (a.rewardType) {
         case "bonusTime":
-            a.rewardValue = 60 * (2 * b + 2);
+            a.rewardValue = 60 * (100 * b + 2);
             break;
         case "freeBricks":
             a.rewardValue = b + 2;
@@ -9529,8 +9529,8 @@ var ArtifactsController = function(a) {
         txtKey: "w001_artifactsSymbols4new0000",
         quantityAvailable: 0,
         bricksPrice: 100,
-        sciencePrice: 1E7,
-        price: 1.99
+        sciencePrice: 0,
+        price: 0.00
     }, {
         uid: 2,
         sku: "bt-golden_wheelbarrow",
@@ -9541,7 +9541,7 @@ var ArtifactsController = function(a) {
         quantityAvailable: 0,
         bricksPrice: 200,
         sciencePrice: 2E7,
-        price: 2.99
+        price: 0.00
     }, {
         uid: 3,
         sku: "bt-golden_bucket",
@@ -9551,8 +9551,8 @@ var ArtifactsController = function(a) {
         txtKey: "w001_artifactsSymbols4new0002",
         quantityAvailable: 0,
         bricksPrice: 300,
-        sciencePrice: 3E7,
-        price: 3.99
+        sciencePrice: 0,
+        price: 0.00
     }, {
         uid: 6,
         sku: "bt-golden_tree",
@@ -9562,8 +9562,8 @@ var ArtifactsController = function(a) {
         txtKey: "w001_artifactsSymbols4new0003",
         quantityAvailable: 0,
         bricksPrice: 400,
-        sciencePrice: 4E7,
-        price: 4.99
+        sciencePrice: 0,
+        price: 0.00
     }, {
         uid: 4,
         sku: "bt-golden_coin",
@@ -9573,8 +9573,8 @@ var ArtifactsController = function(a) {
         txtKey: "w001_artifactsSymbols4new0004",
         quantityAvailable: 0,
         bricksPrice: 600,
-        sciencePrice: 6E7,
-        price: 7.99
+        sciencePrice: 0,
+        price: 0.00
     }, {
         uid: 5,
         sku: "bt-golden_trowel",
@@ -9584,8 +9584,8 @@ var ArtifactsController = function(a) {
         txtKey: "w001_artifactsSymbols4new0005",
         quantityAvailable: 0,
         bricksPrice: 900,
-        sciencePrice: 9E7,
-        price: 9.99
+        sciencePrice: 0,
+        price: 0.00
     }]
 };
 ArtifactsController.prototype.giveArtifact = function(a) {
